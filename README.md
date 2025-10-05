@@ -36,7 +36,7 @@ Web Communication Chat is built with modern web technologies to provide instant 
 ### Technology Stack
 
 - **Frontend**: HTML5, CSS3, JavaScript
-- **Backend**: [Your backend technology - Node.js/Python/etc.]
+- **Backend**: Node.js, WebRTC, Socket.io
 - **Communication**: Real-time web technologies
 - **HTTP Protocol**: RESTful API for message handling
 
