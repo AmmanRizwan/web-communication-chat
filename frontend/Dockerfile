@@ -1,8 +1,8 @@
-FROM node:lts-apline AS builder 
+FROM node:lts-alpine AS builder 
 
 WORKDIR /app
 
-COPY package.json, .yarnrc.yml ./
+COPY package.json .yarnrc.yml ./
 
 COPY . .
 
@@ -16,9 +16,9 @@ ENV VITE_API_URL=${VITE_API_URL}
 
 RUN yarn build 
 
-FROM nginx:latest as production
+FROM nginx:latest AS production
 
-COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=builder /app/dist /usr/share/nginx/html
 
 EXPOSE 80
 
