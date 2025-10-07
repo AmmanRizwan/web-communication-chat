@@ -1,6 +1,6 @@
 enum ROLE {
-  HOST = "host",
-  GUEST = "guest"
+  HOST = 'host',
+  GUEST = 'guest',
 }
 
 export { ROLE };

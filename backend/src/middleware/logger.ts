@@ -1,8 +1,8 @@
-import { logger } from "../utils/logger";
-import { pinoHttp } from "pino-http";
+import { logger } from '../utils/logger';
+import { pinoHttp } from 'pino-http';
 
 const pinoLogger = pinoHttp({
-  logger
+  logger,
 });
 
 export default pinoLogger;
