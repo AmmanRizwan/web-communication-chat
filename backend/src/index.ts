@@ -4,6 +4,7 @@ import env from './config/env';
 import { logger } from './utils/logger';
 import pinoLogger from './middleware/logger';
 import { sequelize } from './config/db';
+import { errorHandler } from './middleware/error';
 
 const PORT = env.PORT;
 const ALLOW_ORIGIN = env.ALLOW_ORIGIN;
@@ -21,6 +22,7 @@ app.use(
 app.use(pinoLogger);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(errorHandler);
 
 app.get('/', (req: Request, res: Response) => {
   res.status(200).json({ message: 'OK' });
